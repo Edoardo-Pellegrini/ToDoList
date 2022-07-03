@@ -1,0 +1,16 @@
+<p *ngIf="caricamento =='non completato'"><img src="https://www.bing.com/th/id/OGC.018db968730b03177f86d4d83c5f99fe?pid=1.7&rurl=https%3a%2f%2finkboxdesigns.imgix.net%2fwebsite%2floading-icons%2fspinner.gif%3fauto%3dcompress%2cenhance%2cformat&ehk=v4OzyA7YqDWvgFDE%2fWv4lv1eboGDDUK8rVI4S8JVQLk%3d" alt=" GIF" ></p>
+
+
+
+
+<ul *ngIf="caricamento=='completato'">
+  <li *ngFor="let item of ciao">
+    {{item.title}}
+
+          <i class="bi bi-check"></i>
+  </li>
+  <p *ngIf="ciao.length>=5"> Nice!!! You have completed a lot of tasks <i class="bi bi-check2-circle"></i></p>
+  <p *ngIf="ciao.length<1">Ops you don't have completed any task! <i class="bi bi-emoji-neutral"></i></p>
+</ul>
+
+

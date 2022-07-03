@@ -1,0 +1,36 @@
+
+<div class="input" >
+  <i class="bi bi-vector-pen"></i>
+  <input type="text"   placeholder="Write new task" #todo>
+  <button type="button"  (click)="addTask(todo.value)">Add<i class="bi bi-plus"></i></button>
+</div>
+
+<div class="pagina" >
+  <ul   *ngFor="let item of todolist ">
+    <li  *ngIf="item.completed == false">
+      <button type="button"  (click)="removeTask(item)">
+
+        <i class="bi bi-trash"></i>
+      </button>
+      {{item.title}}
+
+      <input  type="checkbox" value="" aria-label="..." (click)="cambiaStatus(item)">
+
+
+    </li>
+    <li class="rigato" *ngIf="item.completed == true">
+      <button type="button"  (click)="removeTask(item)">
+
+        <i class="bi bi-trash"></i>
+      </button>
+      {{item.title}}
+
+      <input class="form-check-input me-1" type="checkbox" checked value="" aria-label="" (click)="cambiaStatus(item)">
+
+
+    </li>
+
+
+  </ul>
+</div>
+
