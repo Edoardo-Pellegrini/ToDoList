@@ -6,7 +6,7 @@
 </div>
 
 <div class="pagina" >
-  <ul   *ngFor="let item of todolist ">
+  <ul   *ngFor="let item of array ">
     <li  *ngIf="item.completed == false">
       <button type="button"  (click)="removeTask(item)">
 

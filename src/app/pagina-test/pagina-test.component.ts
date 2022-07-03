@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo,items } from '../pagina-lista/pagina-lista.component';
+import { Todo, items } from '../services/array.service';
+
 
 @Component({
   selector: 'app-pagina-test',

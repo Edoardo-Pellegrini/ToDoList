@@ -2,6 +2,7 @@ import { DeclarationListEmitMode } from '@angular/compiler';
 import { Component, OnInit} from '@angular/core';
 
 import { Title } from '@angular/platform-browser';
+import { ArrayService, Todo } from '../services/array.service';
 
 @Component({
   selector: 'app-pagina-lista',
@@ -9,20 +10,35 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./pagina-lista.component.scss']
 })
 export class PaginaListaComponent implements OnInit {
-
-  constructor() { }
+  array:Todo[]=[]
+  constructor(private array1:ArrayService) { }
 
   ngOnInit(): void {
-    console.log(this.todolist)
-    this.todolist
+    this.array = this.array1.getArray()
   }
-  todolist:Todo[]=[];
+
+  addTask(ele:string):void{
+    this.array1.addTask(ele)
+  }
+
+  removeTask(item:Todo):void{
+    this.array1.removeTask(item)
+
+
+  }
+  cambiaStatus(item:Todo){
+    this.array1.cambiaStatus(item)
+  }
+
+
+
+ /*  todolist:Todo[]=[];
 
 
 
 
   addTask(ele:string){
-    /* alert(ele) */
+
     this.todolist.push({id:this.todolist.length,title:ele,completed:false})
     console.log(this.todolist)
     let input = document.querySelector('input') as HTMLInputElement
@@ -61,5 +77,6 @@ export interface Todo{
   completed:boolean
 
 }
-export let items:Todo[]=[];
+export let items:Todo[]=[]; */
 
+}

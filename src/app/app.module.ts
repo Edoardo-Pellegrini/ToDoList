@@ -15,10 +15,12 @@ import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lista', pathMatch: 'full' },
+
   { path: 'lista', component: PaginaListaComponent },
 
   { path: 'test', component: PaginaTestComponent },
 
+  {path:'**',component:Page404Component}
 ];
 
 @NgModule({
